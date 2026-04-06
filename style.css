@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', Arial, sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    /* Changed background to solid black */
+    background: #000000;
+    color: white; /* Default text color */
+}
+
+.poster {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    /* Subtle overlay with a hint of color */
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px); /* Slightly reduced blur for clarity */
+    text-align: center;
+}
+
+.title {
+    font-size: 60px; /* Larger title */
+    font-weight: bold;
+    letter-spacing: 3px; /* Increased letter spacing */
+    /* Vibrant gradient with glow - kept as requested */
+    background: linear-gradient(90deg, #00f2fe, #4facfe, #00f2fe); /* More dynamic gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 25px rgba(0, 242, 254, 0.7), 0 0 40px rgba(79, 172, 254, 0.5); /* Enhanced glow */
+    margin-bottom: 25px; /* More space below title */
+}
+
+.quote {
+    font-size: 26px; /* Larger quote font */
+    font-style: italic;
+    margin: 25px 0;
+    max-width: 700px; /* Wider quote area */
+    line-height: 1.7; /* Improved readability */
+    color: #ffffff; /* Explicitly set to white */
+    /* Enhanced text-shadow for a bright "bulb" effect */
+    text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px rgba(255, 255, 255, 0.5);
+}
+
+.author {
+    font-size: 18px; /* Larger author font */
+    opacity: 0.8;
+    letter-spacing: 1.5px;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.1); /* Subtle text shadow */
+}
+
+/* Adding some subtle animated elements to mimic the background */
+/* This is a conceptual addition and might require JS for full animation */
+.body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+    animation: pulse 30s infinite linear; /* Conceptual animation */
+    z-index: -1; /* Place behind content */
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .title {
+        font-size: 40px;
+    }
+    .quote {
+        font-size: 20px;
+        max-width: 90%;
+    }
+    .author {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 30px;
+        letter-spacing: 1px;
+    }
+    .quote {
+        font-size: 18px;
+    }
+}
